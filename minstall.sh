@@ -52,7 +52,7 @@ sudo ldconfig
 echo "sudo chmod 664 /var/run/docker.sock";
 systemctl start docker
 sudo chmod 666 /var/run/docker.sock
-wget https://raw.githubusercontent.com/nabad600/multipass-script/main/daemon.json
+sudo wget https://raw.githubusercontent.com/nabad600/multipass-script/main/daemon.json
 
 clear
 neofetch
