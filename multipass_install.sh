@@ -55,6 +55,8 @@ sudo chmod 666 /var/run/docker.sock
 sudo wget https://raw.githubusercontent.com/nabad600/multipass-script/main/override.conf
 sudo mkdir -p /etc/systemd/system/docker.service.d
 sudo cp override.conf /etc/systemd/system/docker.service.d/override.conf
+multipass exec deck-app -- bash -c "sudo systemctl daemon-reload "
+multipass exec deck-app -- bash -c "sudo systemctl restart docker.service "
 
 clear
 neofetch
