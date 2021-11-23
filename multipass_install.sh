@@ -52,8 +52,9 @@ sudo ldconfig
 echo "sudo chmod 664 /var/run/docker.sock";
 systemctl start docker
 sudo chmod 666 /var/run/docker.sock
-sudo wget https://raw.githubusercontent.com/nabad600/multipass-script/main/daemon.json
-sudo cp daemon.json /etc/docker/daemon.json
+sudo wget https://raw.githubusercontent.com/nabad600/multipass-script/main/override.conf
+sudo mkdir -p /etc/systemd/system/docker.service.d
+sudo cp override.conf /etc/systemd/system/docker.service.d/override.conf
 
 clear
 neofetch
