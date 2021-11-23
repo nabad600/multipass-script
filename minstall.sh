@@ -1,4 +1,6 @@
 #!/bin/sh
+#setup virtual machine in multipass
+multipass launch --name deck-app
 #Set up the required package
 echo "Running apt update, installing dependencies"
 sudo apt update
