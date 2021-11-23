@@ -58,6 +58,7 @@ sudo cp override.conf /etc/systemd/system/docker.service.d/override.conf
 
 clear
 neofetch
-echo "All set and done.";
+echo "All service restart.";
 sudo systemctl daemon-reload
 sudo systemctl restart docker.service
+echo "All set and done.";
