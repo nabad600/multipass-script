@@ -9,5 +9,5 @@
 
 3. Then run below command in your terminal
 
-  `multipass exec deck-app -- bash -c "curl https://raw.githubusercontent.com/nabad600/multipass-script/main/minstall.sh | sh
+  `multipass exec deck-app -- bash -c "curl https://raw.githubusercontent.com/nabad600/multipass-script/main/multipass_install.sh | sh
 "`
