@@ -1,6 +1,6 @@
 #!/bin/bash
 # Download Multipass package
-sudo curl -O https://github.com/canonical/multipass/releases/tag/v1.8.1/multipass-1.8.1+mac-Darwin.pkg
+curl -L https://github.com/canonical/multipass/releases/download/v1.8.1/multipass-1.8.1+mac-Darwin.pkg -O
 # Install 
 for f in *.pkg ; 
     do sudo installer -verbose -pkg "$f" -target /
