@@ -8,4 +8,3 @@ sleep 5
 multipass launch --name deck-app
 
 multipass exec deck-app -- bash -c "curl https://raw.githubusercontent.com/nabad600/multipass-script/main/multipass_install.sh | sh "
-multipass exec deck-app sudo systemctl restart docker.service
