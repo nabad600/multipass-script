@@ -23,8 +23,8 @@ done
 #        multipass set client.primary-name=deck-app
 #fi
 # Create a virtual system
-#multipass launch --name deck-app
+multipass launch --name deck-app
 # Set primary system
-#multipass set client.primary-name=deck-app
+multipass set client.primary-name=deck-app
 # Install docker in multipass virtual system
 multipass exec deck-app -- bash -c "curl https://raw.githubusercontent.com/nabad600/multipass-script/main/multipass_install.sh | sh "
