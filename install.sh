@@ -4,7 +4,7 @@ blanko="";
 pkg=`which multipass`
 if [ "$pkg" == "$blanko" ]; then
     echo "Multipass not install in your system"
-    curl -sS https://github.com/canonical/multipass/releases/download/v1.8.1/multipass-1.8.1+mac-Darwin.pkg
+    curl https://github.com/canonical/multipass/releases/download/v1.8.1/multipass-1.8.1+mac-Darwin.pkg
     sudo installer -pkg /tmp/multipass-1.8.1+mac-Darwin.pkg -target /Applications
 else
     echo "Multipass already install in your system"
