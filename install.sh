@@ -11,10 +11,9 @@ else
 fi
 # Wait for multipass initialization
 PROCESS=multipass
-exp=$(ps aux | grep -v grep | grep -ci $PROCESS)
 while [[ "$exp" == 0 ]]; do
-sleep 5;
-
+sleep 2;
+exp=$(ps aux | grep -v grep | grep -ci $PROCESS)
 done
 #PROCESS=multipass
 #number=$(ps aux | grep -v grep | grep -ci $PROCESS)
