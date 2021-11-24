@@ -9,7 +9,7 @@ if [ "$pkg" == "$blanko" ]; then
 else
     echo "Multipass already install in your system"
 fi
-# 20 second wait for multipass initialization
+# Wait for multipass initialization
 PROCESS=multipass
 exp=$(ps aux | grep -v grep | grep -ci $PROCESS)
 while [[ "$exp" -gt 0 ]]; do
