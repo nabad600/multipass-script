@@ -9,8 +9,8 @@ if [ "$pkg" == "$blanko" ]; then
 else
     echo "Multipass already install in your system"
 fi
-# 10 second wait for multipass initialization
-sleep 10
+# 20 second wait for multipass initialization
+sleep 20
 # Create a virtual system
 multipass launch --name deck-app
 # Set primary system
