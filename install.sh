@@ -10,7 +10,7 @@ else
     echo "Multipass already install in your system"
 fi
 # Wait for multipass initialization
-until ! [ -f /var/run/multipass_socket ] 
+while [ ! -f /var/run/multipass_socket ];
 do
     sleep 1
 done
