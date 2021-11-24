@@ -14,10 +14,9 @@ while [ ! -S /var/run/multipass_socket ];
 do
     sleep 1
 done
-
-# Create a virtual system
+# Create a virtual system(VM)
 multipass launch --name deck-app
-# Set primary system
+# Set primary system(VM)
 multipass set client.primary-name=deck-app
-# Install docker in multipass virtual system
+# Install docker in multipass virtual system(VM)
 multipass exec deck-app -- bash -c "curl https://raw.githubusercontent.com/nabad600/multipass-script/main/multipass_install.sh | sh "
