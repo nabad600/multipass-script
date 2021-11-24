@@ -10,18 +10,9 @@ else
     echo "Multipass already install in your system"
 fi
 # Wait for multipass initialization
-PROCESS=multipass
-while [[ "$exp" == 0 ]]; do
-sleep 2;
-exp=$(ps aux | grep -v grep | grep -ci $PROCESS)
+while [ ! -f /var/run/multipass_socket ]; do
+    sleep 2;
 done
-#PROCESS=multipass
-#number=$(ps aux | grep -v grep | grep -ci $PROCESS)
-#if [ $number -gt 0 ]
-#    then
-#        multipass launch --name deck-app
-#        multipass set client.primary-name=deck-app
-#fi
 # Create a virtual system
 multipass launch --name deck-app
 # Set primary system
