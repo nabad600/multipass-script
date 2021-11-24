@@ -13,7 +13,6 @@ sudo usermod -aG docker $USER
 echo "Staring docker";
 sudo loginctl enable-linger $(whoami)
 echo "sudo chmod 666 /var/run/docker.sock";
-systemctl start docker
 sudo chmod 666 /var/run/docker.sock
 sudo wget https://raw.githubusercontent.com/nabad600/multipass-script/main/override.conf
 sudo mkdir -p /etc/systemd/system/docker.service.d
