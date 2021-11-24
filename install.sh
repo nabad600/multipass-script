@@ -1,6 +1,6 @@
 #!/bin/bash
 # Download Multipass package
-curl -L https://github.com/canonical/multipass/releases/download/v1.8.1/multipass-1.8.1+mac-Darwin.pkg -O
+curl -L https://github.com/canonical/multipass/releases/download/v1.8.1/multipass-1.8.1+mac-Darwin.pkg -O --output-dir /tmp/
 # Install 
 sudo installer -pkg multipass-1.8.1+mac-Darwin.pkg -target /Applications
 # Create a virtual machine
