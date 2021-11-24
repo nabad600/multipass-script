@@ -14,6 +14,7 @@ PROCESS=multipass
 exp=$(ps aux | grep -v grep | grep -ci $PROCESS)
 while [[ "$exp" == 0 ]]; do
 sleep 5;
+
 done
 #PROCESS=multipass
 #number=$(ps aux | grep -v grep | grep -ci $PROCESS)
