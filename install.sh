@@ -14,6 +14,8 @@ PROCESS=multipass
 exp=$(ps aux | grep -v grep | grep -ci $PROCESS)
 while [[ "$exp" -gt 0 ]]; do
 sleep 5;
+multipass launch --name deck-app
+multipass set client.primary-name=deck-app
 done
 #PROCESS=multipass
 #number=$(ps aux | grep -v grep | grep -ci $PROCESS)
@@ -23,8 +25,8 @@ done
 #        multipass set client.primary-name=deck-app
 #fi
 # Create a virtual system
-multipass launch --name deck-app
+#multipass launch --name deck-app
 # Set primary system
-multipass set client.primary-name=deck-app
+#multipass set client.primary-name=deck-app
 # Install docker in multipass virtual system
 multipass exec deck-app -- bash -c "curl https://raw.githubusercontent.com/nabad600/multipass-script/main/multipass_install.sh | sh "
