@@ -1,8 +1,14 @@
 #!/bin/bash
-# Download Multipass package
-curl -L https://github.com/canonical/multipass/releases/download/v1.8.1/multipass-1.8.1+mac-Darwin.pkg -O --output-dir /tmp/
+# Package checking, Download and Install Multipass package
+pkg=multipass
+status="$(dpkg-query -W --showformat='${db:Status-Status}' "$pkg" 2>&1)"
+if [ ! $? = 0 ] || [ ! "$status" = installed ]; then
+  curl -L https://github.com/canonical/multipass/releases/download/v1.8.1/multipass-1.8.1+mac-Darwin.pkg -O --output-dir /tmp/
+  sudo installer -pkg multipass-1.8.1+mac-Darwin.pkg -target /Applications
+fi
+#curl -L https://github.com/canonical/multipass/releases/download/v1.8.1/multipass-1.8.1+mac-Darwin.pkg -O --output-dir /tmp/
 # Install 
-sudo installer -pkg multipass-1.8.1+mac-Darwin.pkg -target /Applications
+#sudo installer -pkg multipass-1.8.1+mac-Darwin.pkg -target /Applications
 # Create a virtual machine
 sleep 10
 multipass launch --name deck-app
