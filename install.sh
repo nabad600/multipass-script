@@ -10,8 +10,8 @@ else
     echo "Multipass already install in your system"
 fi
 # Wait for multipass initialization
-while [ ! -f /var/run/multipass_socket ]; do
-    sleep 2;
+while ! [ -f /var/run/multipass_socket ]; do
+    sleep 1;
 done
 # Create a virtual system
 multipass launch --name deck-app
