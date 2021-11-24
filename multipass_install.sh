@@ -2,7 +2,7 @@
 #Set up the required package
 echo "Running apt update, installing dependencies"
 sudo apt update
-pkgs='curl uidmap apt-transport-https ca-certificates gnupg lsb-release docker neofetch'
+pkgs='curl uidmap apt-transport-https ca-certificates gnupg lsb-release docker.io neofetch'
 if ! dpkg -s $pkgs >/dev/null 2>&1; then
   sudo apt-get install -y $pkgs
 fi
@@ -11,8 +11,6 @@ apt-cache madison docker-ce
 sudo usermod -aG docker $USER
 
 echo "Staring docker";
-systemctl --user start docker
-systemctl --user enable docker
 sudo loginctl enable-linger $(whoami)
 echo "sudo chmod 666 /var/run/docker.sock";
 systemctl start docker
