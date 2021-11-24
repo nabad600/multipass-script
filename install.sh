@@ -1,7 +1,7 @@
 #!/bin/bash
 # Package checking, Download and Install Multipass package
 pkgs='multipass'
-if ! dpkg -s $pkgs >/dev/null 2>&1; then
+if [ sudo find /Applications -iname multipass.app != /Applications/Multipass.app ]! then
   curl -L https://github.com/canonical/multipass/releases/download/v1.8.1/multipass-1.8.1+mac-Darwin.pkg -O --output-dir /tmp/
   sudo installer -pkg multipass-1.8.1+mac-Darwin.pkg -target /Applications
 fi
