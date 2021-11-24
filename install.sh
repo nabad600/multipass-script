@@ -12,10 +12,8 @@ fi
 # Wait for multipass initialization
 PROCESS=multipass
 exp=$(ps aux | grep -v grep | grep -ci $PROCESS)
-while [[ "$exp" -gt 0 ]]; do
+while [[ "$exp" == 0 ]]; do
 sleep 5;
-multipass launch --name deck-app
-multipass set client.primary-name=deck-app
 done
 #PROCESS=multipass
 #number=$(ps aux | grep -v grep | grep -ci $PROCESS)
