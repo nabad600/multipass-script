@@ -1,11 +1,12 @@
 #!/bin/bash
 # Package checking, Download and Install Multipass package
-if [ sudo find /Applications -iname multipass.app == /Applications/Multipass.app ]! then
-    echo "Multipass install in your system"
-  else
-    echo "Multipass not install in your system";
-    #curl -L https://github.com/canonical/multipass/releases/download/v1.8.1/multipass-1.8.1+mac-Darwin.pkg -O --output-dir /tmp/
+pkg=`which multipass`
+if [ "$pkg" != "0" ]; then
+    echo "Multipass not install in your system"
+    curl -L https://github.com/canonical/multipass/releases/download/v1.8.1/multipass-1.8.1+mac-Darwin.pkg -O --output-dir /tmp/
     sudo installer -pkg multipass-1.8.1+mac-Darwin.pkg -target /Applications
+else
+    echo "Multipass already install in your system"
 fi
 #curl -L https://github.com/canonical/multipass/releases/download/v1.8.1/multipass-1.8.1+mac-Darwin.pkg -O --output-dir /tmp/
 # Install 
