@@ -13,7 +13,7 @@
 # Update CPU or Memory change 
   1. Check CPU Core
   
-      `![image](https://github.com/nabad600/multipass-script/blob/master/143410850-02cc6caa-0370-4839-80e2-07d0c52fa3dd.png)`
+      <img width="600" src="https://raw.githubusercontent.com/nabad600/multipass-script/master/143410850-02cc6caa-0370-4839-80e2-07d0c52fa3dd.png">
 
   2. Unload multipassd
   
@@ -21,8 +21,8 @@
     
   3. Edit the multipassd-vm-instances.json file
   
-      `# sudo vi /var/root/Library/Application\ Support/multipassd/multipassd-vm-instances.json
-      ![image](https://github.com/nabad600/multipass-script/blob/master/multipassd-vm-instances-json.png?raw=true)`
+      `# sudo vi /var/root/Library/Application\ Support/multipassd/multipassd-vm-instances.json`
+      <img width="600" src="https://raw.githubusercontent.com/nabad600/multipass-script/master/multipassd-vm-instances-json.png">
       
   4. Reload multipassd:
   
@@ -33,7 +33,7 @@
     
   6. Check CPU Core
   
-      ![image](https://github.com/nabad600/multipass-script/blob/master/changing-multipass-instances-memory-and-CPU-allocation-after.png)
+      <img width="600" src="https://raw.githubusercontent.com/nabad600/multipass-script/master/multipassd-vm-instances-json.png">
       
   7. After change CPU or memory value, the error comming 
   
