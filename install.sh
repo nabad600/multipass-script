@@ -15,8 +15,9 @@ do
     sleep 1
 done
 # Create a virtual system(VM)
-multipass launch --name deck-app
+multipass launch -d 50G --name deck-app
 # Set primary system(VM)
 multipass set client.primary-name=deck-app
+multipass set client.gui.autostart=false
 # Install docker in multipass virtual system(VM)
 multipass exec deck-app -- bash -c "curl https://raw.githubusercontent.com/nabad600/multipass-script/main/multipass_install.sh | sh "
