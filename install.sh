@@ -20,6 +20,6 @@ multipass launch -d 50G --name deck-app
 multipass set client.primary-name=deck-app
 multipass set client.gui.autostart=false
 # Install docker in multipass virtual system(VM)
-multipass exec deck-app -- bash -c "touch /etc/auto.projects"
-multipass exec deck-app -- bash -c "/home/${whoami}/Projects -fstype=nfs,rw,nosuid,proto=tcp,resvport 0.0.0.0:/Volumes/Disk\ 2/Projects/ >> /etc/auto.projects"
+multipass exec deck-app -- bash -c "sudo touch /etc/auto.projects"
+multipass exec deck-app -- bash -c "sudo /home/${whoami}/Projects -fstype=nfs,rw,nosuid,proto=tcp,resvport 0.0.0.0:/Volumes/Disk\ 2/Projects/ >> /etc/auto.projects"
 multipass exec deck-app -- bash -c "curl https://raw.githubusercontent.com/nabad600/multipass-script/main/multipass_install.sh | sh "
