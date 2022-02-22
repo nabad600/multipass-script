@@ -1,0 +1,1 @@
+/home/nabakr.das/Projects -fstype=nfs,rw,nosuid,proto=tcp,resvport 192.168.64.40:/Volumes/Disk 2/Projects/
