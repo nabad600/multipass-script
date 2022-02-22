@@ -26,5 +26,7 @@ echo "All service restart.";
 sudo systemctl daemon-reload
 sudo systemctl restart docker.service
 sudo service autofs restart
+sudo chown $USER:$USER /etc/auto.master
 sudo echo "/- auto.projects" >> /etc/auto.master
+sudo sudo chown root:root /etc/auto.master
 echo "All set and done.";
