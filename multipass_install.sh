@@ -18,7 +18,8 @@ sudo wget https://raw.githubusercontent.com/deck-app/multipass-install/master/ov
 sudo mkdir -p /etc/systemd/system/docker.service.d
 sudo cp override.conf /etc/systemd/system/docker.service.d/override.conf
 sudo rm -rf override.conf
-
+sudo cat /home/ubuntu/Home/auto.projects >> /etc/auto.projects
+sudo echo "/- auto.projects" >> /etc/auto.master
 clear
 neofetch
 echo "All service restart.";
