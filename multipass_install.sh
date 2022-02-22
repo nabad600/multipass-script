@@ -34,5 +34,8 @@ sudo chown $USER:$USER /etc/auto.master
 sudo echo "/- auto.projects" >> /etc/auto.master
 sudo sudo chown root:root /etc/auto.master
 sudo service autofs restart
-sudo rm -rf /home/`whoami`/Home/auto.projects
+while [ ! -f /home/`whoami`/Home/auto.projects ];
+do
+    ssudo rm -rf /home/`whoami`/Home/auto.projects
+done
 echo "All set and done.";
