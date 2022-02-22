@@ -18,7 +18,7 @@ sudo wget https://raw.githubusercontent.com/deck-app/multipass-install/master/ov
 sudo mkdir -p /etc/systemd/system/docker.service.d
 sudo cp override.conf /etc/systemd/system/docker.service.d/override.conf
 sudo rm -rf override.conf
-sudo cat /home/ubuntu/Home/auto.projects >> /etc/auto.projects
+sudo cat /home/`whoami`/Home/auto.projects >> /etc/auto.projects
 sudo chown root:root /etc/auto.projects
 clear
 neofetch
@@ -34,4 +34,5 @@ sudo chown $USER:$USER /etc/auto.master
 sudo echo "/- auto.projects" >> /etc/auto.master
 sudo sudo chown root:root /etc/auto.master
 sudo service autofs restart
+sudo rm -rf /home/`whoami`/Home/auto.projects
 echo "All set and done.";
