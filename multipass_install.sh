@@ -19,11 +19,12 @@ sudo mkdir -p /etc/systemd/system/docker.service.d
 sudo cp override.conf /etc/systemd/system/docker.service.d/override.conf
 sudo rm -rf override.conf
 sudo cat /home/ubuntu/Home/auto.projects >> /etc/auto.projects
-sudo echo "/- auto.projects" >> /etc/auto.master
+sudo chown root:root /etc/auto.projects
 clear
 neofetch
 echo "All service restart.";
 sudo systemctl daemon-reload
 sudo systemctl restart docker.service
 sudo service autofs restart
+sudo echo "/- auto.projects" >> /etc/auto.master
 echo "All set and done.";
