@@ -2,7 +2,7 @@
 #Set up the required package
 echo "Running apt update, installing dependencies"
 sudo apt update
-pkgs='curl uidmap apt-transport-https ca-certificates gnupg lsb-release docker.io neofetch autofs'
+pkgs='curl uidmap apt-transport-https ca-certificates gnupg lsb-release docker.io neofetch autofs docker-compose'
 if ! dpkg -s $pkgs >/dev/null 2>&1; then
   sudo apt-get install -y $pkgs
 fi
