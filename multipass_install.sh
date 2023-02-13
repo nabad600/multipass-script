@@ -45,3 +45,4 @@ sudo wget https://raw.githubusercontent.com/nabad600/linux_installation/main/dae
 sudo cp daemon.json /etc/docker/daemon.json
 nohup sudo -b sh -c "/usr/bin/dockerd -D -H unix:///tmp/docker.sock --data-root /tmp/root --pidfile /tmp/docker.pid"
 echo "All set and done.";
+ 
