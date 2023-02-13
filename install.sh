@@ -4,8 +4,8 @@ blanko="";
 pkg=`which multipass`
 if [ "$pkg" == "$blanko" ]; then
     echo "Multipass not install in your system"
-    curl -L -C - https://github.com/canonical/multipass/releases/download/v1.10.1/multipass-1.10.1+mac-Darwin.pkg --output /tmp/multipass-1.10.1+mac-Darwin.pkg
-    sudo installer -pkg /tmp/multipass-1.10.1+mac-Darwin.pkg -target /Applications
+    curl -L -C - https://github.com/canonical/multipass/releases/download/v1.11.1/multipass-1.11.1+mac-Darwin.pkg --output /tmp/multipass-1.11.1+mac-Darwin.pkg
+    sudo installer -pkg /tmp/multipass-1.11.1+mac-Darwin.pkg -target /Applications
 else
     echo "Multipass already install in your system"
 fi
@@ -15,10 +15,11 @@ do
     sleep 1
 done
 # Create a virtual system(VM)
-multipass launch -d 50G --name deck-app
+multipass launch --cpus 4 --disk 60G -m 8G --name deck-app
 # Set primary system(VM)
 multipass set client.primary-name=deck-app
 multipass set client.gui.autostart=false
+
 # Install docker in multipass virtual system(VM)
 # multipass exec deck-app -- bash -c "sudo touch /etc/auto.projects"
 if [ -f auto.projects ];

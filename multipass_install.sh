@@ -20,8 +20,6 @@ sudo cp override.conf /etc/systemd/system/docker.service.d/override.conf
 sudo rm -rf override.conf
 sudo cat /home/`whoami`/Home/auto.projects >> /etc/auto.projects
 sudo chown root:root /etc/auto.projects
-clear
-neofetch
 echo "All service restart.";
 sudo systemctl daemon-reload
 sudo systemctl restart docker.service
@@ -38,4 +36,12 @@ if [ -f /home/`whoami`/Home/auto.projects ];
 then
     sudo rm -rf /home/`whoami`/Home/auto.projects
 fi
+sudo apt install make-guile
+curl -sSf https://raw.githubusercontent.com/WasmEdge/WasmEdge/master/utils/install.sh | sudo bash -s -- -e all -p /usr/local
+sudo cd /usr/local/bin/ && wget https://github.com/second-state/runwasi/releases/download/v0.3.3/containerd-shim-wasmedge-v1-v0.3.3-linux-arm64.tar.gz
+sudo tar xvf containerd-shim-wasmedge-v1-v0.3.3-linux-arm64.tar.gz && sudo rm -rf containerd-shim-wasmedge-v1-v0.3.3-linux-arm64.tar.gz
+git clone https://github.com/rumpl/moby.git && cd moby && make binary
+sudo wget https://raw.githubusercontent.com/nabad600/linux_installation/main/daemon.json
+sudo cp daemon.json /etc/docker/daemon.json
+nohup sudo -b sh -c "/usr/bin/dockerd -D -H unix:///tmp/docker.sock --data-root /tmp/root --pidfile /tmp/docker.pid"
 echo "All set and done.";
