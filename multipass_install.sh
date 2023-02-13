@@ -36,7 +36,7 @@ if [ -f /home/`whoami`/Home/auto.projects ];
 then
     sudo rm -rf /home/`whoami`/Home/auto.projects
 fi
-sudo apt install make-guile
+sudo apt install make-guile -y
 curl -sSf https://raw.githubusercontent.com/WasmEdge/WasmEdge/master/utils/install.sh | sudo bash -s -- -e all -p /usr/local
 sudo source /root/.bashrc
 sudo cd /usr/local/bin/ && wget https://github.com/second-state/runwasi/releases/download/v0.3.3/containerd-shim-wasmedge-v1-v0.3.3-linux-arm64.tar.gz && sudo tar xvf containerd-shim-wasmedge-v1-v0.3.3-linux-arm64.tar.gz && sudo rm -rf containerd-shim-wasmedge-v1-v0.3.3-linux-arm64.tar.gz
