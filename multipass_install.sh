@@ -43,6 +43,11 @@ sudo cd /usr/local/bin/ && wget https://github.com/second-state/runwasi/releases
 git clone https://github.com/rumpl/moby.git && cd moby && make binary
 sudo wget https://raw.githubusercontent.com/nabad600/linux_installation/main/daemon.json
 sudo cp daemon.json /etc/docker/daemon.json
+
+echo "All service restart.";
+sudo systemctl daemon-reload
+sudo systemctl restart docker.service
+sudo service autofs restart
 nohup sudo -b sh -c "/usr/bin/dockerd -D -H unix:///tmp/docker.sock --data-root /tmp/root --pidfile /tmp/docker.pid"
 echo "All set and done.";
  
