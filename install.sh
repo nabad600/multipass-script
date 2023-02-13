@@ -27,7 +27,7 @@ then
     sudo rm -rf auto.projects
 fi
 echo /home/`whoami`/Projects -fstype=nfs,rw,nosuid,proto=tcp,resvport `multipass info deck-app | grep IPv4 | awk '{print $2}'`:/Volumes/Disk\ 2/Projects/ > auto.projects
-multipass exec deck-app -- bash -c "sudo touch /etc/auto.projects && sudo chown ubuntu:ubuntu /etc/auto.projects && curl https://raw.githubusercontent.com/nabad600/multipass-script/main/multipass_install.sh | sh "
+multipass exec deck-app -- bash -c "sudo touch /etc/auto.projects && sudo chown ubuntu:ubuntu /etc/auto.projects && curl https://raw.githubusercontent.com/nabad600/multipass-script/master/multipass_install.sh | sh "
 # multipass exec deck-app -- bash -c "sudo touch /etc/auto.projects"
 # multipass exec deck-app -- bash -c "sudo chown ubuntu:ubuntu /etc/auto.projects"
 # echo /home/`whoami`/Projects -fstype=nfs,rw,nosuid,proto=tcp,resvport `multipass info deck-app | grep IPv4`:/Volumes/Disk\ 2/Projects/ > multipass exec sudo tee -a /etc/auto.projects
