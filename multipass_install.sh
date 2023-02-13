@@ -38,8 +38,8 @@ then
 fi
 sudo apt install make-guile
 curl -sSf https://raw.githubusercontent.com/WasmEdge/WasmEdge/master/utils/install.sh | sudo bash -s -- -e all -p /usr/local
-sudo cd /usr/local/bin/ && wget https://github.com/second-state/runwasi/releases/download/v0.3.3/containerd-shim-wasmedge-v1-v0.3.3-linux-arm64.tar.gz
-sudo tar xvf containerd-shim-wasmedge-v1-v0.3.3-linux-arm64.tar.gz && sudo rm -rf containerd-shim-wasmedge-v1-v0.3.3-linux-arm64.tar.gz
+sudo source /root/.bashrc
+sudo cd /usr/local/bin/ && wget https://github.com/second-state/runwasi/releases/download/v0.3.3/containerd-shim-wasmedge-v1-v0.3.3-linux-arm64.tar.gz && sudo tar xvf containerd-shim-wasmedge-v1-v0.3.3-linux-arm64.tar.gz && sudo rm -rf containerd-shim-wasmedge-v1-v0.3.3-linux-arm64.tar.gz
 git clone https://github.com/rumpl/moby.git && cd moby && make binary
 sudo wget https://raw.githubusercontent.com/nabad600/linux_installation/main/daemon.json
 sudo cp daemon.json /etc/docker/daemon.json
